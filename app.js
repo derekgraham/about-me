@@ -1,5 +1,5 @@
 alert('Hi, let\'s play a guessing game about me! You have 5 questions to answer.');
-var myPrompts = ['Q1','Q2','Q3','Q4','Q5'];
+var myPrompts = ['Was I born in Canada - Yes or No?','Do I like to bake cookies?','Q3','Q4','Q5'];
 var myAnswers = ['YES','NO','YES','YES','NO'];
 var correctAnswers = 0;
 
@@ -16,4 +16,4 @@ for (i = 0; i < myPrompts.length; i++)
   }
 
 }
-  alert('You answered ' + correctAnswers + ' questions correctly!');
+alert('You answered ' + correctAnswers + ' questions correctly!');
