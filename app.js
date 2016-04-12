@@ -1,5 +1,9 @@
 alert('Hi, let\'s play a guessing game about me! You have 5 questions to answer.');
-var myPrompts = ['Was I born in Canada - Yes or No?','Do I like to bake cookies?','Q3','Q4','Q5'];
+var myPrompts = ['Was I born in Canada - Yes or No?',
+'Do I like to bake cookies - Yes or No?',
+'Did I have a pet pig - Yes or No?',
+'Did I work at a fruit cannery - Yes or No?',
+'Do I currently live in Portland, Oregon - Yes or No?'];
 var myAnswers = ['YES','NO','YES','YES','NO'];
 var correctAnswers = 0;
 
