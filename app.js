@@ -6,14 +6,17 @@ var correctAnswers = 0;
 for (i = 0; i < myPrompts.length; i++)
 {
   var answer1 = prompt(myPrompts[i]);
-
-  if (answer1.toUpperCase() === myAnswers[i][0] || answer1.toUpperCase() === myAnswers[i]) {
-    console.log('The user response to: ' + myPrompts[i] + ' is ' + answer1);
+  if (answer1 === null) {
+    i = myPrompts.length + 1;
+  }
+  else if (answer1.toUpperCase() === myAnswers[i][0] || answer1.toUpperCase() === myAnswers[i]) {
+    console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- CORRECT!');
     correctAnswers ++;
   }
   else {
+    console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- WRONG!');
     alert('Sorry, that was incorrect!');
   }
 
 }
-alert('You answered ' + correctAnswers + ' questions correctly!');
+alert('Thanks for playing! You answered ' + correctAnswers + ' questions correctly!');
