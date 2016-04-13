@@ -19,7 +19,7 @@ var userName = prompt('Hello, what is your name?');
 alert('Hi, ' + userName + ' let\'s play a guessing game about me! You have 6 questions to answer.');
 
 // for (i = 0; i < myPrompts.length; i++)
-for (i = 0; i < 5; i++)
+for (i = 4; i < 5; i++)
 {
   var answer1 = prompt(myPrompts[i]);
   if (answer1 === null) {
@@ -27,6 +27,7 @@ for (i = 0; i < 5; i++)
   }
   else if (answer1.toUpperCase() === myAnswers[i][0] || answer1.toUpperCase() === myAnswers[i]) {
     console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- CORRECT!');
+    alert(correctResponse);
     correctAnswers ++;
   }
   else {
@@ -40,20 +41,26 @@ for (i = 0; i < 5; i++)
 alert('You have 4 guesses for the next question!');
 do
 {
-  answer1 = prompt(myPrompts[5]);
-  if (answer1 === null) {
-    break;
+  answer1 = parseInt(prompt(myPrompts[5] + ' You have ' + userGuesses + ' guesses remaining.'),10);
+  userGuesses--;
+  if ( isNaN(answer1) ) {
+    alert('Oops, that was not a number!');
+    console.log('User entered NaN');
   }
   else if (answer1 === myAnswers[5]) {
-    console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- CORRECT!');
-    prompt(correctResponse);
+    console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- CORRECT!');
+    alert(correctResponse);
     correctAnswers ++;
     break;
   }
+  else if(answer1 > myAnswers[5]) {
+    alert('Sorry, that guess was too high!');
+    console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- Too high!');
+  }
   else {
-    console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- WRONG!');
-    alert('Sorry, that was incorrect! Please try again. You have ' + --userGuesses + ' guesses remaining.');
+    alert('Sorry, that was guess was too low!');
+    console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- Too low!');
   }
 } while (userGuesses > 0);
 
-alert('Thanks for playing! You answered ' + correctAnswers + 'out of ' + myPrompts.length + ' questions correctly!');
+alert('Thanks for playing, ' + userName + '! You answered ' + correctAnswers + 'out of ' + myPrompts.length + ' questions correctly!');
