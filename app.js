@@ -19,7 +19,7 @@ var userName = prompt('Hello, what is your name?');
 alert('Hi, ' + userName + ' let\'s play a guessing game about me! You have 6 questions to answer.');
 
 // for (i = 0; i < myPrompts.length; i++)
-for (i = 4; i < 5; i++)
+for (i = 0; i < 5; i++)
 {
   var answer1 = prompt(myPrompts[i]);
   if (answer1 === null) {
