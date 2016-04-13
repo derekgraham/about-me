@@ -11,3 +11,10 @@ This project displays a basic biographical information page about the auther and
 [X] - Create basic HTML bio
 [X] - Create quiz in js
 ```
+## Day 3 Lab
+```markdown
+[ ] - Add Top 10 List
+[ ] - Add question 6.
+[ ] - check for NaN
+[ ] - check for too high and too low
+[ ] - personalize with userName
