@@ -2,7 +2,7 @@
 Assignment for Code 201 to create a personal profile page with a guessing game.
 
 ## Description
-This project displays a basic biographical information page about the author and offers a 5 question quiz to the reader.
+This project displays a basic biographical information page about the author and offers a 7 question quiz to the reader.
 
 ## To Do List
 ```markdown
