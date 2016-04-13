@@ -19,7 +19,9 @@ This project displays a basic biographical information page about the author and
 ## Day 3 Lab
 ```markdown
 [ ] - Add Top 10 List
-[ ] - Add question 6.
-[ ] - check for NaN
-[ ] - check for too high and too low
-[ ] - personalize with userName
+[x] - Add question 6.
+[x] - check for NaN
+[x] - check for too high and too low
+[x] - personalize with userName
+
+[ ] - add question 7

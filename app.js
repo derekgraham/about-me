@@ -6,20 +6,21 @@ var myPrompts = ['Was I born in Canada - Yes or No?',
 'Did I have a pet pig - Yes or No?',
 'Did I work at a fruit cannery - Yes or No?',
 'Do I currently live in Portland, Oregon - Yes or No?',
-'How many miles is it to bike from my house to CodeFellows? Enter a number between 1 and 10.'];
+'How many miles is it to bike from my house to CodeFellows? Enter a number between 1 and 10.',
+'Can you guess an animal that was on the farm where I grew up?'
+];
 
 var correctResponse = 'Yes, that is correct!';
-var myAnswers = ['YES','NO','YES','YES','NO',6];
+var myAnswers = ['YES','NO','YES','YES','NO',6,['PIG','HORSE','GOAT','CHICKEN']];
 var correctAnswers = 0;
 var userGuesses = 4;
 var questionIndex = 0;
 
 // let's start here, asking for user input.
 var userName = prompt('Hello, what is your name?');
-alert('Hi, ' + userName + ' let\'s play a guessing game about me! You have 6 questions to answer.');
+alert('Hi, ' + userName + ' let\'s play a guessing game about me! You have 7 questions to answer.');
 
-// for (i = 0; i < myPrompts.length; i++)
-for (i = 0; i < 5; i++)
+for (i = 5; i < 5; i++)
 {
   var answer1 = prompt(myPrompts[i]);
   if (answer1 === null) {
@@ -63,4 +64,28 @@ do
   }
 } while (userGuesses > 0);
 
-alert('Thanks for playing, ' + userName + '! You answered ' + correctAnswers + 'out of ' + myPrompts.length + ' questions correctly!');
+alert('You have 6 guesses for the next question.');
+for (i = 0; i < 6; i++) {
+  answer1 = prompt(myPrompts[6] + ' You have ' + (6 - i) + ' guesses left.').toUpperCase();
+  for (j = 0 ; j < myAnswers[6].length ; j++){
+    gotOne = false;
+    if (answer1.startsWith(myAnswers[6][j]))
+    {
+      var gotOne = true;
+      break;
+    }
+  }
+  if (gotOne){
+    alert('that\'s correct');
+    correctAnswers++;
+    break;
+  }
+  else {
+    alert('Sorry, ' + userName + ' ' + answer1 + ' is not correct. Please try again');
+    continue;
+  }
+
+}
+alert('The possible anwsers to the question were: ' + myAnswers[6]);
+
+alert('Thanks for playing, ' + userName + '! You answered ' + correctAnswers + ' out of ' + myPrompts.length + ' questions correctly!');
