@@ -4,6 +4,11 @@ Assignment for Code 201 to create a personal profile page with a guessing game.
 ## Description
 This project displays a basic biographical information page about the author and offers a 7 question quiz to the reader.
 
+## Pair Editing
+
+-- Driver - George Holmes -
+-- Navigator - Derek Graham - 
+
 ## To Do List
 ```markdown
 [x] - Get repository set up on github
