@@ -18,72 +18,74 @@ var questionIndex = 0;
 
 // let's start here, asking for user input.
 var userName = prompt('Hello, what is your name?');
-alert('Hi, ' + userName + ' let\'s play a guessing game about me! You have 7 questions to answer.');
+if (userName != null ){
+  alert('Hi, ' + userName + ' let\'s play a guessing game about me! You have 7 questions to answer.');
 
-for (i = 0; i < 5; i++)
-{
-  var answer1 = prompt(myPrompts[i]);
-  if (answer1 === null) {
-    break;
-  }
-  else if (answer1.toUpperCase() === myAnswers[i][0] || answer1.toUpperCase() === myAnswers[i]) {
-    console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- CORRECT!');
-    alert(correctResponse);
-    correctAnswers ++;
-  }
-  else {
-    console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- WRONG!');
-    alert('Sorry, that was incorrect!');
-  }
-
-}
-
-// prompt for this is in the array position 6, index 5
-do
-{
-  answer1 = parseInt(prompt(myPrompts[5] + ' You have ' + userGuesses + ' guesses remaining.'),10);
-  userGuesses--;
-  if ( isNaN(answer1) ) {
-    alert('Oops, that was not a number!');
-    console.log('User entered NaN');
-  }
-  else if (answer1 === myAnswers[5]) {
-    console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- CORRECT!');
-    alert(correctResponse);
-    correctAnswers ++;
-    break;
-  }
-  else if(answer1 > myAnswers[5]) {
-    alert('Sorry, that guess was too high!');
-    console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- Too high!');
-  }
-  else {
-    alert('Sorry, that was guess was too low!');
-    console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- Too low!');
-  }
-} while (userGuesses > 0);
-
-for (i = 0; i < 6; i++) {
-  answer1 = prompt(myPrompts[6] + ' You have ' + (6 - i) + ' guesses left.').toUpperCase();
-  for (j = 0 ; j < myAnswers[6].length ; j++){
-    gotOne = false;
-    if (answer1.startsWith(myAnswers[6][j]))
-    {
-      var gotOne = true;
+  for (i = 0; i < 5; i++)
+  {
+    var answer1 = prompt(myPrompts[i]);
+    if (answer1 === null) {
       break;
     }
-  }
-  if (gotOne){
-    alert('that\'s correct');
-    correctAnswers++;
-    break;
-  }
-  else {
-    alert('Sorry, ' + userName + ' ' + answer1 + ' is not correct. Please try again');
-    continue;
+    else if (answer1.toUpperCase() === myAnswers[i][0] || answer1.toUpperCase() === myAnswers[i]) {
+      console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- CORRECT!');
+      alert(correctResponse);
+      correctAnswers ++;
+    }
+    else {
+      console.log('The user response to: ' + myPrompts[i] + ' is \"' + answer1 + '\" -- WRONG!');
+      alert('Sorry, that was incorrect!');
+    }
+
   }
 
+// prompt for this is in the array position 6, index 5
+  do
+  {
+    answer1 = parseInt(prompt(myPrompts[5] + ' You have ' + userGuesses + ' guesses remaining.'),10);
+    userGuesses--;
+    if ( isNaN(answer1) ) {
+      alert('Oops, that was not a number!');
+      console.log('User entered NaN');
+    }
+    else if (answer1 === myAnswers[5]) {
+      console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- CORRECT!');
+      alert(correctResponse);
+      correctAnswers ++;
+      break;
+    }
+    else if(answer1 > myAnswers[5]) {
+      alert('Sorry, that guess was too high!');
+      console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- Too high!');
+    }
+    else {
+      alert('Sorry, that was guess was too low!');
+      console.log('The user response to: ' + myPrompts[5] + ' is \"' + answer1 + '\" -- Too low!');
+    }
+  } while (userGuesses > 0);
+
+  for (i = 0; i < 6; i++) {
+    answer1 = prompt(myPrompts[6] + ' You have ' + (6 - i) + ' guesses left.').toUpperCase();
+    for (j = 0 ; j < myAnswers[6].length ; j++){
+      gotOne = false;
+      if (answer1.startsWith(myAnswers[6][j]))
+      {
+        var gotOne = true;
+        break;
+      }
+    }
+    if (gotOne){
+      alert('that\'s correct');
+      correctAnswers++;
+      break;
+    }
+    else {
+      alert('Sorry, ' + userName + ' ' + answer1 + ' is not correct. Please try again');
+      continue;
+    }
+
+  }
+  alert('The possible anwsers to the question were: ' + myAnswers[6]);
+
+  alert('Thanks for playing, ' + userName + '! You answered ' + correctAnswers + ' out of ' + myPrompts.length + ' questions correctly!');
 }
-alert('The possible anwsers to the question were: ' + myAnswers[6]);
-
-alert('Thanks for playing, ' + userName + '! You answered ' + correctAnswers + ' out of ' + myPrompts.length + ' questions correctly!');
