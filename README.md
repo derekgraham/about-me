@@ -10,18 +10,18 @@ This project displays a basic biographical information page about the author and
 [x] - add files for html and js
 [X] - Create basic HTML bio
 [X] - Create quiz in js
-[ ] - Add some more details to bio using lists &etc.
-[ ] - Create branch for question \#6
-[ ] - Create branch for question \#7
+[x] - Add some more details to bio using lists &etc.
+[x] - Create branch for question \#6
+[x] - Create branch for question \#7
 [ ] - Create new code for responses
 
 ```
 ## Day 3 Lab
 ```markdown
-[ ] - Add Top 10 List
+[x] - Add Top 10 List
 [x] - Add question 6.
 [x] - check for NaN
 [x] - check for too high and too low
 [x] - personalize with userName
 
-[ ] - add question 7
+[x] - add question 7
