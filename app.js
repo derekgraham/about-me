@@ -39,7 +39,6 @@ for (i = 0; i < 5; i++)
 }
 
 // prompt for this is in the array position 6, index 5
-alert('You have 4 guesses for the next question!');
 do
 {
   answer1 = parseInt(prompt(myPrompts[5] + ' You have ' + userGuesses + ' guesses remaining.'),10);
@@ -64,7 +63,6 @@ do
   }
 } while (userGuesses > 0);
 
-alert('You have 6 guesses for the next question.');
 for (i = 0; i < 6; i++) {
   answer1 = prompt(myPrompts[6] + ' You have ' + (6 - i) + ' guesses left.').toUpperCase();
   for (j = 0 ; j < myAnswers[6].length ; j++){
