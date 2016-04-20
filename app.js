@@ -17,7 +17,7 @@ var userGuesses = 4;
 var questionIndex = 0;
 
 function fiveQuestions() {
-  for (i = 0; i < 5; i++) {
+  for (var i = 0; i < 5; i++) {
     var answer1 = prompt(myPrompts[i]);
     if (answer1 === null) {
       break;
@@ -36,7 +36,7 @@ function question6() {
   for (var i = 4; i > 0 ; i-- ){
     {
       // answer1 = parseInt(prompt(myPrompts[5] + ' You have ' + (4 - i) + ' guess' + ( function() { if(( 4 - i) > 1) { return 'es'; } else return '';}() ) + ' remaining.'),10);
-      answer1 = parseInt(prompt(myPrompts[5] + ' You have ' + i + ' guess' + ( function() { if( i > 1) { return 'es'; } else return '';}() ) + ' remaining.'),10);
+      var answer1 = parseInt(prompt(myPrompts[5] + ' You have ' + i + ' guess' + ( function() { if( i > 1) { return 'es'; } else return '';}() ) + ' remaining.'),10);
       if ( isNaN(answer1) ) {
         alert('Oops, that was not a number!');
         console.log('User entered NaN');
@@ -61,7 +61,7 @@ function question6() {
 function question7() {
   'use strict';
   for (var i = 6; i > 0; i--) {
-    answer1 = prompt(myPrompts[6] + ' You have ' + i + ' guess' + ( function() { if( i > 1) { return 'es'; } else return '';}() ) + ' left.');
+    var answer1 = prompt(myPrompts[6] + ' You have ' + i + ' guess' + ( function() { if( i > 1) { return 'es'; } else return '';}() ) + ' left.');
     for (var j = 0 ; j < myAnswers[6].length ; j++){
       var gotOne = false;
       if (answer1.toUpperCase().startsWith( myAnswers[6][j].toUpperCase()))
